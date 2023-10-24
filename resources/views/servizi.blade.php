@@ -26,7 +26,7 @@
               <li class="nav-item">
                 <a class="nav-link active" href="{{route('servizi')}}">I Nostri Servizi</a>
               </li>
-
+       
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" href="{{route('chiSiamo')}}">Chi siamo</a>
@@ -36,12 +36,27 @@
         </div>
       </nav>
       {{-- Fine Navbar --}}
+
       
-  
-
-
-
-
+      {{-- card --}}
+    <div class="container">
+      <div class="row">
+        @foreach ($articoli as $articolo)
+        <div class="col-4">
+          <div class="card" style="width: 18rem;">
+            <img src="{{$articolo['img']}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{$articolo['name']}}</h5>
+              <p class="card-text">{{substr($articolo['description'], 15)}}</p>
+              <p class="card-text">{{$articolo['price']}}</p>
+              <a href="{{route('article',['articleName'=> $articolo['name']])}}" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
+      {{-- fine card  --}}
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

@@ -26,8 +26,7 @@
               <li class="nav-item">
                 <a class="nav-link active" href="{{route('servizi')}}">I Nostri Servizi</a>
               </li>
-
-                </li>
+             
                 <li class="nav-item">
                   <a class="nav-link active" href="{{route('chiSiamo')}}">Chi siamo</a>
               </li>
@@ -36,11 +35,22 @@
         </div>
       </nav>
       {{-- Fine Navbar --}}
-      
-  
 
+     <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <h1>{{$bevanda['name']}}</h1>
+          <p>{{$bevanda['description']}}</p>
+          <p>{{$bevanda['price']}}</p>
+        </div>
+        <div class="col-4">
+          <img src="{{$bevanda['img']}}" alt="">
 
+        </div>
+      </div>
+     </div>
 
+     
 
 
 

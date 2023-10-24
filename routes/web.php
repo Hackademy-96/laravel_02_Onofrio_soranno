@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
+
+Route::get('/i-nostri-servizi', [PublicController::class, 'servizi'])->name('servizi');
+
+Route::get ('/chi-siamo',[PublicController::class, 'chiSiamo'])->name('chiSiamo');
+
+Route::get('/articoli/{articleName}',[ArticleController::class, 'article'])->name('article');
